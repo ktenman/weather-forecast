@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.id;
 
 class WeatherForecastSearchE2ETest {
 	
-	private static final String DEFAULT_LOCATION = "Tartu";
+	private static final String DEFAULT_LOCATION = "Tallinn";
 	
 	@Test
 	void shouldDisplayWeatherForecastForLocation_whenSearchingForTartu() {
@@ -29,7 +29,7 @@ class WeatherForecastSearchE2ETest {
 		
 		SelenideElement location = $(className("location"));
 		if (location.exists()) {
-			assertThat(location.text()).isEqualTo("Tartu");
+			assertThat(location.text()).isEqualTo(DEFAULT_LOCATION);
 		} else {
 			fail("Could not find location");
 		}
