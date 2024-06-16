@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.id;
 
 class WeatherForecastSearchE2ETest {
 	
-	private static final String DEFAULT_LOCATION = "Tallinn";
+	private static final String DEFAULT_LOCATION = "Tartu";
 	
 	@Test
 	void shouldDisplayWeatherForecastForLocation_whenSearchingForTartu() {
