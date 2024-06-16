@@ -32,7 +32,7 @@ class WeatherForecastRetrievalJobIT {
 	
 	@Test
 	void shouldNotCreateDuplicatedRows_whenTriggeredMultipleTimesWithSameData() {
-		stubForForecastXml("forecast.xml");
+		stubForForecastXml("forecast_2024-06-16.xml");
 		
 		weatherForecastRetrievalJob.runJob();
 		weatherForecastRetrievalJob.runJob();
@@ -60,10 +60,10 @@ class WeatherForecastRetrievalJobIT {
 	
 	@Test
 	void shouldSaveNewData_whenTriggeredWithNewDataAfterInitialRun() {
-		stubForForecastXml("forecast.xml");
+		stubForForecastXml("forecast_2024-06-16.xml");
 		weatherForecastRetrievalJob.runJob();
 		
-		stubForForecastXml("forecast2.xml");
+		stubForForecastXml("forecast_2024-06-17.xml");
 		weatherForecastRetrievalJob.runJob();
 		
 		List<WeatherForecast> allForecasts = weatherForecastRepository.findAll();

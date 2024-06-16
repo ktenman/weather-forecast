@@ -13,8 +13,6 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-    session:
-      timeout: 30m
 
 ilmateenistus:
   url: http://localhost:${wiremock.server.port}
