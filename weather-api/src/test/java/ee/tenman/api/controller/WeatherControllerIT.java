@@ -2,12 +2,12 @@ package ee.tenman.api.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ee.tenman.domain.ForecastType;
-import ee.tenman.domain.WeatherForecast;
-import ee.tenman.domain.WeatherForecastDetails;
 import ee.tenman.api.IntegrationTest;
 import ee.tenman.api.models.CombinedForecastDto;
 import ee.tenman.api.repository.WeatherForecastRepository;
+import ee.tenman.domain.ForecastType;
+import ee.tenman.domain.WeatherForecast;
+import ee.tenman.domain.WeatherForecastDetails;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +69,8 @@ class WeatherControllerIT {
 					assertThat(forecast.temperatureMax()).isEqualTo(12.5);
 				}
 		);
-		assertThat(capturedOutput).contains("WeatherController.getWeatherForecast(..) entered with arguments: [\"Tartu\"]")
+		assertThat(capturedOutput).as("Checking if @Loggable annotation is used")
+				.contains("WeatherController.getWeatherForecast(..) entered with arguments: [\"Tartu\"]")
 				.contains("WeatherController.getWeatherForecast(..) exited with result: {\"Tartu\":[{\"date\":\"2024-06-16\",\"location\":\"Tartu\",\"temperatureMin\":8.1,\"temperatureMax\":12.5}]}");
 	}
 	

@@ -1,10 +1,10 @@
 package ee.tenman.api.controller;
 
-import ee.tenman.api.service.WeatherService;
 import ee.tenman.api.configuration.logging.aspect.Loggable;
-import ee.tenman.domain.WeatherForecast;
 import ee.tenman.api.mapper.WeatherMapper;
 import ee.tenman.api.models.CombinedForecastDto;
+import ee.tenman.api.service.WeatherService;
+import ee.tenman.domain.WeatherForecast;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +25,9 @@ public class WeatherController {
 	
 	@Loggable
 	@GetMapping(value = "/forecast", produces = APPLICATION_JSON_VALUE)
-	public Map<String, List<CombinedForecastDto>> getWeatherForecast(@RequestParam(value = "location", defaultValue = "") String location) {
+	public Map<String, List<CombinedForecastDto>> getWeatherForecast(
+			@RequestParam(value = "location", defaultValue = "") String location
+	) {
 		List<WeatherForecast> weatherForecasts = weatherService.getCombinedWeatherDetailsByLocationAndDateRange(location);
 		return WeatherMapper.toCombinedForecastDtoMap(weatherForecasts);
 	}

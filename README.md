@@ -99,6 +99,8 @@ cd weather-api
 ../gradlew bootRun
 ```
 
+You can access Swagger documentation in your web browser at http://localhost:8080/swagger-ui/index.html
+
 ### Frontend Setup
 
 Navigate to the `ui` directory, install frontend dependencies, and start the development server:
@@ -109,6 +111,8 @@ npm install
 npm run dev
 ```
 
+You can access it in your web browser at http://localhost:61234
+
 ### Running in Production
 
 To run the application in production, use Docker Compose:
@@ -117,8 +121,7 @@ To run the application in production, use Docker Compose:
 docker-compose -f docker-compose.yml up -d
 ```
 
-Once the application is up and running, you can access it in your web browser at http://localhost. The frontend will be
-served at this URL, allowing you to interact with the Weather Forecast application.
+Once the application is up and running, you can access it in your web browser at http://localhost
 
 ### Updating the Application
 
