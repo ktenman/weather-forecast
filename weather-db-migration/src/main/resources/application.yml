@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/weather
+    username: weather
+    password: weather
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # Use 'update' for development
+    show-sql: false
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.hibernate: INFO
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{20} %X{transactionId}- %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{20} %X{transactionId}- %msg%n'
+
+server:
+  port: ${SERVER_PORT:8083}

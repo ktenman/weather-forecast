@@ -1,0 +1,22 @@
+FROM gradle:jdk21 AS build
+
+WORKDIR /app
+
+COPY weather-db-migration/build.gradle.kts settings.gradle.kts /app/
+COPY gradle /app/gradle
+COPY weather-db-migration/src /app/src
+
+RUN gradle clean build -x test --no-daemon
+
+FROM openjdk:21-slim
+
+WORKDIR /app
+
+COPY --from=build /app/build/libs/*.jar /app/app.jar
+
+ENV JAVA_OPTS="-Xms512m -Duser.timezone=Europe/Tallinn"
+ENV JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=80"
+
+ENV SERVER_PORT=8083
+
+CMD ["sh", "-c", "java $JAVA_OPTS -Dserver.port=$SERVER_PORT -jar /app/app.jar"]

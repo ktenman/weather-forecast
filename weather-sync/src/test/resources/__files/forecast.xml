@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<forecasts>
+    <forecast date="2024-06-16">
+        <night>
+            <phenomenon>Variable clouds</phenomenon>
+            <tempmin>7</tempmin>
+            <tempmax>13</tempmax>
+            <text>Slightly or partly cloudy. On islands showers locally. Fog patches possible. Southeast, east wind 1-6,
+                on islands to 9, in gusts up to 12 m/s. Air temperature 7..13°C.
+            </text>
+            <place>
+                <name>Harku</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmin>9</tempmin>
+            </place>
+            <place>
+                <name>Jõhvi</name>
+                <phenomenon>Few clouds</phenomenon>
+                <tempmin>8</tempmin>
+            </place>
+            <place>
+                <name>Tartu</name>
+                <phenomenon>Few clouds</phenomenon>
+                <tempmin>9</tempmin>
+            </place>
+            <place>
+                <name>Pärnu</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmin>12</tempmin>
+            </place>
+            <place>
+                <name>Kuressaare</name>
+                <phenomenon>Light shower</phenomenon>
+                <tempmin>13</tempmin>
+            </place>
+            <place>
+                <name>Türi</name>
+                <phenomenon>Few clouds</phenomenon>
+                <tempmin>9</tempmin>
+            </place>
+            <wind>
+                <name>Kuusiku</name>
+                <direction>Southeast wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>5</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>Väike-Maarja</name>
+                <direction>East wind</direction>
+                <speedmin>1</speedmin>
+                <speedmax>4</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>Võrtsjärv</name>
+                <direction>Southeast wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>4</speedmax>
+                <gust></gust>
+            </wind>
+            <sea>Forecast for Baltic Sea valid 24 hours from 19:00 Jun 15 to 19:00 UTC Jun 16, 2024.
+
+                Warnings: Northern Baltic: southeast in gusts up to 15 m/s. Wave height 1-2 m.
+
+                Weather summary: High moving slowly over the Baltic States to northeast. Weak Trough of Low moving over
+                Baltic Sea northwards.
+
+
+                Northern Baltic: southeast 6-11, in gusts up to 15 m/s, in morning decreasing, by day mainly southerly
+                3-8 m/s. At night wave height 1-2 m. Rain showers in many places. Visibility good to moderate.
+
+                Gulf of Finland, Moonsund, Northern Gulf of Riga: east, southeast 3-9, at night in gusts to 12 m/s. Dry.
+                Visibility mostly good
+            </sea>
+            <peipsi>Southeast, east wind 2-7 m/s. Wave height 0.3-0.7 m. Dry. Visibility mostly good. Air temperature
+                12..14°C.
+            </peipsi>
+        </night>
+        <day>
+            <phenomenon>Variable clouds</phenomenon>
+            <tempmin>18</tempmin>
+            <tempmax>24</tempmax>
+            <text>Partly cloudy. On the islands showers possible. Southeast, east wind 2-8 m/s. Air temperature
+                18..24°C.
+            </text>
+            <place>
+                <name>Harku</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>23</tempmax>
+            </place>
+            <place>
+                <name>Jõhvi</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>22</tempmax>
+            </place>
+            <place>
+                <name>Tartu</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>23</tempmax>
+            </place>
+            <place>
+                <name>Pärnu</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>23</tempmax>
+            </place>
+            <place>
+                <name>Kuressaare</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>18</tempmax>
+            </place>
+            <place>
+                <name>Türi</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>22</tempmax>
+            </place>
+            <wind>
+                <name>Kuusiku</name>
+                <direction>Southeast wind</direction>
+                <speedmin>3</speedmin>
+                <speedmax>5</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>Väike-Maarja</name>
+                <direction>East wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>5</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>Võrtsjärv</name>
+                <direction>Southeast wind</direction>
+                <speedmin>3</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <sea></sea>
+            <peipsi>Southeast, east wind 2-8 m/s. Wave height 0.3-0.7 m. Dry. Visibility mostly good. Air temperature
+                19..21°C.
+            </peipsi>
+        </day>
+    </forecast>
+    <forecast date="2024-06-17">
+        <night>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>12</tempmin>
+            <tempmax>17</tempmax>
+            <text>Few and variable clouds. Rain showers locally, by morning more widely, risk of thunder. Easterly wind
+                2-8 m/s. Air temperature 12..17°C.
+            </text>
+        </night>
+        <day>
+            <phenomenon>Thunderstorm</phenomenon>
+            <tempmin>17</tempmin>
+            <tempmax>26</tempmax>
+            <text>Cloudy with bright spells. Showers with thunder, locally heavy precipitation and hail possible. By
+                evening it is clearing up and rain reducing. Wind becoming from islands westerly 2-8 m/s, gusty during
+                thunder. Air temperature 20..26, on coast and under rainclouds locally 17°C.
+            </text>
+        </day>
+    </forecast>
+    <forecast date="2024-06-18">
+        <night>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>9</tempmin>
+            <tempmax>15</tempmax>
+            <text>Slightly or partly cloudy. In eastern part showers in many places, risk of thunder. Locally fog.
+                Westerly wind 2-8 m/s. Air temperature 9..15°C.
+            </text>
+        </night>
+        <day>
+            <phenomenon>Light shower</phenomenon>
+            <tempmin>17</tempmin>
+            <tempmax>25</tempmax>
+            <text>Slightly or partly cloudy and locally showers. Westerly wind 2-8 m/s. Air temperature 19..25, on coast
+                locally to 17°C.
+            </text>
+        </day>
+    </forecast>
+    <forecast date="2024-06-19">
+        <night>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>10</tempmin>
+            <tempmax>15</tempmax>
+            <text>Slightly or partly cloudy. Locally showers. Westerly wind 2-8 m/s. Air temperature 10..15°C.</text>
+        </night>
+        <day>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>16</tempmin>
+            <tempmax>21</tempmax>
+            <text>Variable clouds. Showers in many places, risk of thunder. In the evening it is clearing up from west.
+                Westerly wind 3-9, on coast in gusts 12 m/s, during thunder stronger gusts possible. Air temperature
+                16..21°C.
+            </text>
+        </day>
+    </forecast>
+</forecasts>
