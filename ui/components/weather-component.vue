@@ -9,14 +9,14 @@
                 id="location"
                 v-model="location"
                 class="form-control"
-                type="text"
                 placeholder="Search for location..."
+                type="text"
             />
             <button class="btn btn-primary" type="submit">Search</button>
           </div>
         </form>
         <div v-if="weatherForecast && Object.keys(weatherForecast).length > 0">
-          <div v-for="(forecastList, location) in weatherForecast" :key="location" id="results">
+          <div v-for="(forecastList, location) in weatherForecast" id="results" :key="location">
             <h5 class="location">{{ location }}</h5>
             <ul>
               <li v-for="forecast in forecastList" :key="forecast.date">

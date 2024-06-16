@@ -6,12 +6,10 @@ import ee.tenman.domain.WeatherForecastDetails;
 import ee.tenman.sync.external.WeatherForecastDto;
 import ee.tenman.sync.external.WeatherServiceClient;
 import ee.tenman.sync.repository.WeatherForecastRepository;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -83,7 +81,8 @@ public class WeatherForecastRetrievalJob {
 		return forecast;
 	}
 	
-	private record LocationWithForecast(WeatherForecastDto.PlaceDto place, ForecastType forecastType) {
+	private record LocationWithForecast(WeatherForecastDto.PlaceDto place,
+	                                    ForecastType forecastType) {
 		String location() {
 			return place.getLocation();
 		}

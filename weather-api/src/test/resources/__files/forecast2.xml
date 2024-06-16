@@ -5,7 +5,9 @@
             <phenomenon>Moderate shower</phenomenon>
             <tempmin>10</tempmin>
             <tempmax>18</tempmax>
-            <text>Few and variable clouds. Rain showers locally, risk of thunder. Mainly easterly wind 2-7 m/s. Air temperature 12..18, in northeastern part locally to 10°C.  </text>
+            <text>Few and variable clouds. Rain showers locally, risk of thunder. Mainly easterly wind 2-7 m/s. Air
+                temperature 12..18, in northeastern part locally to 10°C.
+            </text>
             <place>
                 <name>Harku</name>
                 <phenomenon>Variable clouds</phenomenon>
@@ -64,19 +66,29 @@
                 Weather summary: eastern part of Low over Baltic Sea.
 
 
-                Northern Baltic: by day mainly southerly, at night and tomorrow by day variable 2-7 m/s. Today in many places, tomorrow locally rain showers. Visibility good to moderate.
+                Northern Baltic: by day mainly southerly, at night and tomorrow by day variable 2-7 m/s. Today in many
+                places, tomorrow locally rain showers. Visibility good to moderate.
 
-                Gulf of Finland: by day east, southeast 3-8, in gusts 11 m/s, at night and tomorrow by day easterly 2-8 m/s. At night locally, tomorrow by day in many places rain showers, locally heavy precipitation and risk of thunder. Visibility good, restricted in showers.
+                Gulf of Finland: by day east, southeast 3-8, in gusts 11 m/s, at night and tomorrow by day easterly 2-8
+                m/s. At night locally, tomorrow by day in many places rain showers, locally heavy precipitation and risk
+                of thunder. Visibility good, restricted in showers.
 
-                Moonsund, Northern Gulf of Riga: east, southeast, tomorrow by day mainly southerly 2-7 m/s. At night locally, tomorrow by day in many places rain showers, locally heavy precipitation and risk of thunder. Visibility good, restricted in showers.
+                Moonsund, Northern Gulf of Riga: east, southeast, tomorrow by day mainly southerly 2-7 m/s. At night
+                locally, tomorrow by day in many places rain showers, locally heavy precipitation and risk of thunder.
+                Visibility good, restricted in showers.
             </sea>
-            <peipsi>Mainly easterly wind 2-7 m/s. Wave height 0.3-0.7 m. After midnight locally showers. Visibility good to moderate. Air temperature 15..18°C.</peipsi>
+            <peipsi>Mainly easterly wind 2-7 m/s. Wave height 0.3-0.7 m. After midnight locally showers. Visibility good
+                to moderate. Air temperature 15..18°C.
+            </peipsi>
         </night>
         <day>
             <phenomenon>Thunderstorm</phenomenon>
             <tempmin>17</tempmin>
             <tempmax>26</tempmax>
-            <text>Cloudy with bright spells. Showers with thunder, locally heavy precipitation and hail possible. In the evening it is clearing up on islands. Mainly easterly, on islands variable wind 2-8 m/s, during thunder strong wind gusts possible. Air temperature 20..26, on coast and under rainclouds locally 17°C. </text>
+            <text>Cloudy with bright spells. Showers with thunder, locally heavy precipitation and hail possible. In the
+                evening it is clearing up on islands. Mainly easterly, on islands variable wind 2-8 m/s, during thunder
+                strong wind gusts possible. Air temperature 20..26, on coast and under rainclouds locally 17°C.
+            </text>
             <place>
                 <name>Harku</name>
                 <phenomenon>Thunderstorm</phenomenon>
@@ -129,7 +141,9 @@
                 <gust></gust>
             </wind>
             <sea></sea>
-            <peipsi>Mainly easterly wind 2-7 m/s, during thunder strong wind gusts possible. Wave height 0.3-0.7 m. Showers at times, thunder. Visibility good to moderate. Air temperature 21..24°C.</peipsi>
+            <peipsi>Mainly easterly wind 2-7 m/s, during thunder strong wind gusts possible. Wave height 0.3-0.7 m.
+                Showers at times, thunder. Visibility good to moderate. Air temperature 21..24°C.
+            </peipsi>
         </day>
     </forecast>
     <forecast date="2024-06-18">
@@ -137,13 +151,17 @@
             <phenomenon>Moderate shower</phenomenon>
             <tempmin>10</tempmin>
             <tempmax>17</tempmax>
-            <text>Cloudy with clear spells. In the mainland showers in many places, risk of thunder. Locally fog. Variable wind 1-7, by morning becoming westerly 3-9 m/s. Air temperature 10..17°C.</text>
+            <text>Cloudy with clear spells. In the mainland showers in many places, risk of thunder. Locally fog.
+                Variable wind 1-7, by morning becoming westerly 3-9 m/s. Air temperature 10..17°C.
+            </text>
         </night>
         <day>
             <phenomenon>Light shower</phenomenon>
             <tempmin>17</tempmin>
             <tempmax>25</tempmax>
-            <text>In the forenoon cloudy with clear spells, in the afternoon slightly and partly cloudy. Locally showers. Westerly wind 3-9 , in gusts up to 12 m/s. Air temperature 19..25, on coast locally up to 17°C.</text>
+            <text>In the forenoon cloudy with clear spells, in the afternoon slightly and partly cloudy. Locally
+                showers. Westerly wind 3-9 , in gusts up to 12 m/s. Air temperature 19..25, on coast locally up to 17°C.
+            </text>
         </day>
     </forecast>
     <forecast date="2024-06-19">
@@ -151,13 +169,17 @@
             <phenomenon>Variable clouds</phenomenon>
             <tempmin>9</tempmin>
             <tempmax>15</tempmax>
-            <text>Slightly or partly cloudy and mostly dry. Westerly wind 2-8, on coast in gusts up to 11 m/s. Air temperature 9..15°C.</text>
+            <text>Slightly or partly cloudy and mostly dry. Westerly wind 2-8, on coast in gusts up to 11 m/s. Air
+                temperature 9..15°C.
+            </text>
         </night>
         <day>
             <phenomenon>Moderate shower</phenomenon>
             <tempmin>15</tempmin>
             <tempmax>21</tempmax>
-            <text>Variable clouds. Rain in many places, locally heavy, risk of thunder. From evening it is clearing up from west. Westerly wind 3-9, in gusts up to 13 m/s. Air temperature 15..21°C.</text>
+            <text>Variable clouds. Rain in many places, locally heavy, risk of thunder. From evening it is clearing up
+                from west. Westerly wind 3-9, in gusts up to 13 m/s. Air temperature 15..21°C.
+            </text>
         </day>
     </forecast>
     <forecast date="2024-06-20">
@@ -165,13 +187,17 @@
             <phenomenon>Light shower</phenomenon>
             <tempmin>9</tempmin>
             <tempmax>15</tempmax>
-            <text>Slightly and partly cloudy. At first in Eastern Estonia showers in many places. Westelry wind 3-9, in gusts up to 13 m/s. Air temperature 9..15°C.</text>
+            <text>Slightly and partly cloudy. At first in Eastern Estonia showers in many places. Westelry wind 3-9, in
+                gusts up to 13 m/s. Air temperature 9..15°C.
+            </text>
         </night>
         <day>
             <phenomenon>Light shower</phenomenon>
             <tempmin>16</tempmin>
             <tempmax>21</tempmax>
-            <text>Slightly and partly cloudy. Locally showers possible. West, southwest wind 5-11, in gusts 15, on coast up to 17 m/s, in the evening some decreasing. Air temperature 16..21°C.</text>
+            <text>Slightly and partly cloudy. Locally showers possible. West, southwest wind 5-11, in gusts 15, on coast
+                up to 17 m/s, in the evening some decreasing. Air temperature 16..21°C.
+            </text>
         </day>
     </forecast>
 </forecasts>

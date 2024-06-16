@@ -6,7 +6,7 @@ export class WeatherService {
 
     async getWeatherForecast(location: string): Promise<WeatherForecastResponse> {
         try {
-            const {data} = await axios.get<WeatherForecastResponse>('/api/weather/forecast', { params: { location } })
+            const {data} = await axios.get<WeatherForecastResponse>('/api/weather/forecast', {params: {location}})
             return data
         } catch (error) {
             this.handleError(error as AxiosError<ApiError>)
