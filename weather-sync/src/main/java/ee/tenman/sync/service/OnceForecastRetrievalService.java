@@ -1,4 +1,4 @@
-package ee.tenman.sync;
+package ee.tenman.sync.service;
 
 import ee.tenman.sync.job.WeatherForecastRetrievalJob;
 import jakarta.annotation.PostConstruct;
