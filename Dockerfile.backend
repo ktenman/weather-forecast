@@ -12,11 +12,11 @@ COPY weather-domain/src /app/weather-domain/src
 # Build the domain module, excluding the bootJar task
 RUN gradle :weather-domain:build -x test -x bootJar --no-daemon
 
-# Copy the sync module build files and source code
+# Copy the api module build files and source code
 COPY weather-api/build.gradle.kts /app/weather-api/
 COPY weather-api/src /app/weather-api/src
 
-# Build the sync module
+# Build the api module
 RUN gradle :weather-api:build -x test --no-daemon
 
 FROM openjdk:21-slim
