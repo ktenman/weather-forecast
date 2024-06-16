@@ -15,7 +15,7 @@
             <button class="btn btn-primary" type="submit">Search</button>
           </div>
         </form>
-        <div v-if="weatherForecast">
+        <div v-if="weatherForecast && Object.keys(weatherForecast).length > 0">
           <div v-for="(forecastList, location) in weatherForecast" :key="location" id="results">
             <h5 class="location">{{ location }}</h5>
             <ul>
@@ -23,6 +23,11 @@
                 {{ forecast.date }}: {{ forecast.temperatureMin }}-{{ forecast.temperatureMax }}&deg;C
               </li>
             </ul>
+          </div>
+        </div>
+        <div v-else-if="weatherForecast && Object.keys(weatherForecast).length === 0" class="mt-3">
+          <div class="alert alert-info" role="alert">
+            No weather forecast data found for "{{ location }}"
           </div>
         </div>
         <div v-if="displayAlert()" class="mt-3">

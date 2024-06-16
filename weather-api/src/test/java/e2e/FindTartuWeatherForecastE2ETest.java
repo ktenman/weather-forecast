@@ -16,9 +16,10 @@ import static org.openqa.selenium.By.id;
 class WeatherForecastSearchE2ETest {
 	
 	private static final String DEFAULT_LOCATION = "Tartu";
+	private static final String TALLINN = "Tallinn";
 	
 	@Test
-	void shouldDisplayWeatherForecastForLocation_whenSearchingForTartu() {
+	void shouldDisplayWeatherForecastForLocation_whenSearchingForValidLocation() {
 		open("http://localhost:61234");
 		
 		$(id("location")).shouldNotHave(text(DEFAULT_LOCATION))
@@ -35,6 +36,31 @@ class WeatherForecastSearchE2ETest {
 		}
 		
 		assertThat($(By.id("location")).val()).isEqualTo(DEFAULT_LOCATION);
+	}
+	
+	@Test
+	void shouldNotDisplayWeatherForecastForLocation_whenSearchingForNonValidLocation() {
+		open("http://localhost:61234");
+		
+		$(id("location")).shouldNotHave(text(TALLINN))
+				.setValue(TALLINN)
+				.pressEnter();
+		
+		Selenide.sleep(1000);
+		
+		SelenideElement location = $(className("location"));
+		if (location.exists()) {
+			assertThat(location.text()).isEqualTo(TALLINN);
+			fail("Should not have found location");
+		}
+		
+		assertThat($(By.id("location")).val()).isEqualTo(TALLINN);
+		SelenideElement alertInfo = $(className("alert"));
+		if (alertInfo.exists()) {
+			assertThat(alertInfo.text()).isEqualTo("No weather forecast data found for \"" + TALLINN + "\"");
+		} else {
+			fail("Could not find alert info");
+		}
 	}
 	
 }
