@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableFeignClients
 @EnableScheduling
-@EntityScan(Constants.basePackage)
+@EntityScan(Constants.BASE_PACKAGE)
 public class WeatherSyncApplication {
 	
 	public static void main(String[] args) {

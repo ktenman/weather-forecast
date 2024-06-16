@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(Constants.basePackage)
+@EntityScan(Constants.BASE_PACKAGE)
 public class WeatherApiApplication {
 	
 	public static void main(String[] args) {
