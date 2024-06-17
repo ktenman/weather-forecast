@@ -1,6 +1,6 @@
 import axios, {AxiosError} from 'axios'
 import {ApiError} from '../models/api-error'
-import {WeatherForecastResponse} from "../models/weather-forecast";
+import {WeatherForecastResponse} from '../models/weather-forecast'
 
 export class WeatherService {
 

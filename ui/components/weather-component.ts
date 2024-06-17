@@ -2,14 +2,14 @@ import {Vue} from 'vue-class-component'
 import {AlertType, getAlertBootstrapClass} from '../models/alert-type'
 import {WeatherService} from '../services/weather-service'
 import {ApiError} from '../models/api-error'
-import {WeatherForecastResponse} from "../models/weather-forecast";
+import {WeatherForecastResponse} from '../models/weather-forecast'
 
 export default class WeatherComponent extends Vue {
     alertMessage: string = ''
     alertType: AlertType | null = null
     apiService: WeatherService = new WeatherService()
     location: string = ''
-    weatherForecast: WeatherForecastResponse | null = null;
+    weatherForecast: WeatherForecastResponse | null = null
 
     async fetchWeatherForecast() {
         try {
