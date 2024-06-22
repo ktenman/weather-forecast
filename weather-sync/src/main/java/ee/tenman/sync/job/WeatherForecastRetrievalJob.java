@@ -1,11 +1,13 @@
 package ee.tenman.sync.job;
 
 import ee.tenman.domain.ForecastType;
+import ee.tenman.domain.Location;
 import ee.tenman.domain.WeatherForecast;
 import ee.tenman.domain.WeatherForecastDetails;
+import ee.tenman.domain.repository.WeatherForecastRepository;
 import ee.tenman.sync.external.WeatherForecastDto;
 import ee.tenman.sync.external.WeatherServiceClient;
-import ee.tenman.sync.repository.WeatherForecastRepository;
+import ee.tenman.sync.service.LocationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -28,6 +30,7 @@ public class WeatherForecastRetrievalJob {
 	
 	private final WeatherServiceClient weatherServiceClient;
 	private final WeatherForecastRepository weatherForecastRepository;
+	private final LocationService locationService;
 	
 	@Scheduled(cron = "0 0/30 * * * *")
 	public void runJob() {
@@ -56,7 +59,7 @@ public class WeatherForecastRetrievalJob {
 			Map.Entry<String, List<LocationWithForecast>> entry,
 			LocalDate date
 	) {
-		String location = entry.getKey();
+		Location location = locationService.getOrCreateLocation(entry.getKey());
 		WeatherForecast forecast = weatherForecastRepository
 				.findByDateAndLocation(date, location)
 				.orElseGet(() -> {

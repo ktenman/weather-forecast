@@ -4,10 +4,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ee.tenman.api.IntegrationTest;
 import ee.tenman.api.models.CombinedForecastDto;
-import ee.tenman.api.repository.WeatherForecastRepository;
 import ee.tenman.domain.ForecastType;
+import ee.tenman.domain.Location;
 import ee.tenman.domain.WeatherForecast;
 import ee.tenman.domain.WeatherForecastDetails;
+import ee.tenman.domain.repository.LocationRepository;
+import ee.tenman.domain.repository.WeatherForecastRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,9 @@ class WeatherControllerIT {
 	
 	@Autowired
 	private WeatherForecastRepository weatherForecastRepository;
+	
+	@Autowired
+	private LocationRepository locationRepository;
 	
 	@Autowired
 	private ObjectMapper objectMapper;
@@ -77,7 +82,9 @@ class WeatherControllerIT {
 	private void insertWeatherForecastToDB() {
 		WeatherForecast weatherForecast = new WeatherForecast();
 		weatherForecast.setDate(LocalDate.parse("2024-06-16"));
-		weatherForecast.setLocation("Tartu");
+		Location location = new Location();
+		location.setName("Tartu");
+		weatherForecast.setLocation(locationRepository.saveAndFlush(location));
 		WeatherForecastDetails details = new WeatherForecastDetails();
 		details.setForecastType(ForecastType.DAY);
 		details.setTemperatureMin(8.1);

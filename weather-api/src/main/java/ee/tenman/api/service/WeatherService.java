@@ -1,7 +1,7 @@
 package ee.tenman.api.service;
 
-import ee.tenman.api.repository.WeatherForecastRepository;
 import ee.tenman.domain.WeatherForecast;
+import ee.tenman.domain.repository.WeatherForecastRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ public class WeatherService {
 	private final Clock clock;
 	private final WeatherForecastRepository weatherForecastRepository;
 	
-	public List<WeatherForecast> getCombinedWeatherDetailsByLocationAndDateRange(String location) {
+	public List<WeatherForecast> getCombinedWeatherDetailsByLocationAndDateRange(String locationName) {
 		LocalDate today = LocalDate.now(clock);
-		return weatherForecastRepository.findByLocationContainingIgnoreCaseAndDateAfterOrEqual(location, today);
+		return weatherForecastRepository.findByLocationNameContainingIgnoreCaseAndDateGreaterThanEqual(locationName, today);
 	}
 }

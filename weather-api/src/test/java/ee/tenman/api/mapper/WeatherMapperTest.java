@@ -2,6 +2,7 @@ package ee.tenman.api.mapper;
 
 import ee.tenman.api.models.CombinedForecastDto;
 import ee.tenman.domain.ForecastType;
+import ee.tenman.domain.Location;
 import ee.tenman.domain.WeatherForecast;
 import ee.tenman.domain.WeatherForecastDetails;
 import org.junit.jupiter.api.Test;
@@ -33,12 +34,14 @@ class WeatherMapperTest {
 	
 	private static WeatherForecast createWeatherForecast(
 			String date,
-			String location,
+			String locationName,
 			Double temperatureMin,
 			Double temperatureMax
 	) {
 		WeatherForecast weatherForecast = new WeatherForecast();
 		weatherForecast.setDate(LocalDate.parse(date));
+		Location location = new Location();
+		location.setName(locationName);
 		weatherForecast.setLocation(location);
 		
 		WeatherForecastDetails details = new WeatherForecastDetails();

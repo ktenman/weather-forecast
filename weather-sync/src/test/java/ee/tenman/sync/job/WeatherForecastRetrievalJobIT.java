@@ -1,9 +1,10 @@
 package ee.tenman.sync.job;
 
 import ee.tenman.domain.ForecastType;
+import ee.tenman.domain.Location;
 import ee.tenman.domain.WeatherForecast;
+import ee.tenman.domain.repository.WeatherForecastRepository;
 import ee.tenman.sync.IntegrationTest;
-import ee.tenman.sync.repository.WeatherForecastRepository;
 import jakarta.annotation.Resource;
 import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ class WeatherForecastRetrievalJobIT {
 		
 		List<WeatherForecast> allForecasts = weatherForecastRepository.findAll();
 		assertThat(allForecasts).isNotEmpty().hasSize(6).first().satisfies(weatherForecast -> {
-			assertThat(weatherForecast.getLocation()).isEqualTo("Jõhvi");
+			assertThat(weatherForecast.getLocation().getName()).isEqualTo("Jõhvi");
 			assertThat(weatherForecast.getDate()).isEqualTo("2024-06-16");
 			assertThat(weatherForecast.getWeatherForecastDetails()).hasSize(2)
 					.anySatisfy(details -> {
@@ -54,7 +55,7 @@ class WeatherForecastRetrievalJobIT {
 						assertThat(details.getPhenomenon()).isEqualTo("Variable clouds");
 					});
 		});
-		assertThat(allForecasts).extracting(WeatherForecast::getLocation)
+		assertThat(allForecasts).extracting(WeatherForecast::getLocation).extracting(Location::getName)
 				.containsOnly("Jõhvi", "Kuressaare", "Pärnu", "Türi", "Harku", "Tartu");
 	}
 	
@@ -68,7 +69,7 @@ class WeatherForecastRetrievalJobIT {
 		
 		List<WeatherForecast> allForecasts = weatherForecastRepository.findAll();
 		assertThat(allForecasts).hasSize(12)
-				.extracting(WeatherForecast::getLocation, f -> f.getDate().toString())
+				.extracting(wf -> wf.getLocation().getName(), f -> f.getDate().toString())
 				.contains(
 						Tuple.tuple("Jõhvi", "2024-06-16"),
 						Tuple.tuple("Kuressaare", "2024-06-16"),

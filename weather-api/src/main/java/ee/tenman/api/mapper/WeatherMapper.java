@@ -38,7 +38,7 @@ public class WeatherMapper {
 		
 		return new CombinedForecastDto(
 				weatherForecast.getDate().toString(),
-				weatherForecast.getLocation(),
+				weatherForecast.getLocation().getName(),
 				temperatureMin,
 				temperatureMax
 		);
