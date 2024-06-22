@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-3">
     <div class="row mt-4">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <h3>Weather Forecast</h3>
         <form @submit.prevent="fetchWeatherForecast">
           <div class="input-group mb-3">
