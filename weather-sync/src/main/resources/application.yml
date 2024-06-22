@@ -23,11 +23,6 @@ spring:
         cache.use_query_cache: false
         generate_statistics: false
 
-  data:
-    redis:
-      host: redis
-      port: 6379
-
 logging:
   level:
     root: INFO
@@ -38,13 +33,6 @@ logging:
     file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{20} %X{transactionId}- %msg%n'
 
 server:
-  servlet:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
-    session:
-      timeout: 30m
   port: ${SERVER_PORT:8082}
 
 ilmateenistus:

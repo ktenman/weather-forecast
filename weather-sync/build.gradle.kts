@@ -34,7 +34,6 @@ dependencies {
     implementation(project(":weather-domain"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")

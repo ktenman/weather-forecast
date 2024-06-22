@@ -11,6 +11,3 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-
-ilmateenistus:
-  url: http://localhost:${wiremock.server.port}

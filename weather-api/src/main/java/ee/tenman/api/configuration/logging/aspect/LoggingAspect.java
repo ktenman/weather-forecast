@@ -65,7 +65,11 @@ public class LoggingAspect {
 	
 	private void logExit(ProceedingJoinPoint joinPoint, Object result, long startTime) throws Throwable {
 		String resultJson = objectMapper.writeValueAsString(result);
-		log.info("{} exited with result: {} in {} seconds", joinPoint.getSignature().toShortString(), resultJson, TimeUtility.durationInSeconds(startTime));
+		log.info("{} exited with result: {} in {} seconds",
+				joinPoint.getSignature().toShortString(),
+				resultJson,
+				TimeUtility.durationInSeconds(startTime)
+		);
 	}
 	
 }
