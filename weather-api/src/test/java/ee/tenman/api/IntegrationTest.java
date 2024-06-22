@@ -1,5 +1,6 @@
 package ee.tenman.api;
 
+
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.util.TestPropertyValues;
@@ -20,32 +21,34 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @SpringBootTest
 @AutoConfigureMockMvc
-@ContextConfiguration(initializers = Initializer.class)
+@ContextConfiguration(initializers = IntegrationTest.Initializer.class)
 @Sql(scripts = "/clear_database.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 public @interface IntegrationTest {
-}
-
-class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 	
-	private static final PostgreSQLContainer<?> POSTGRES_DB_CONTAINER = new PostgreSQLContainer<>("postgres:16.3-alpine");
-	private static final GenericContainer<?> REDIS_CONTAINER = new GenericContainer<>(DockerImageName.parse("redis:7.2-alpine"))
-			.withExposedPorts(6379);
-	
-	static {
-		REDIS_CONTAINER.start();
-		POSTGRES_DB_CONTAINER.start();
-	}
-	
-	@Override
-	public void initialize(ConfigurableApplicationContext applicationContext) {
-		TestPropertyValues.of(
-				"spring.data.redis.host=" + REDIS_CONTAINER.getHost(),
-				"spring.data.redis.port=" + REDIS_CONTAINER.getFirstMappedPort(),
-				
-				"spring.datasource.url=" + POSTGRES_DB_CONTAINER.getJdbcUrl(),
-				"spring.datasource.username=" + POSTGRES_DB_CONTAINER.getUsername(),
-				"spring.datasource.password=" + POSTGRES_DB_CONTAINER.getPassword()
-		).applyTo(applicationContext.getEnvironment());
+	class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+		
+		private static final PostgreSQLContainer<?> POSTGRES_DB_CONTAINER =
+				new PostgreSQLContainer<>("postgres:16.3-alpine");
+		private static final GenericContainer<?> REDIS_CONTAINER =
+				new GenericContainer<>(DockerImageName.parse("redis:7.2-alpine"))
+						.withExposedPorts(6379);
+		
+		static {
+			REDIS_CONTAINER.start();
+			POSTGRES_DB_CONTAINER.start();
+		}
+		
+		@Override
+		public void initialize(ConfigurableApplicationContext applicationContext) {
+			TestPropertyValues.of(
+					"spring.data.redis.host=" + REDIS_CONTAINER.getHost(),
+					"spring.data.redis.port=" + REDIS_CONTAINER.getFirstMappedPort(),
+					
+					"spring.datasource.url=" + POSTGRES_DB_CONTAINER.getJdbcUrl(),
+					"spring.datasource.username=" + POSTGRES_DB_CONTAINER.getUsername(),
+					"spring.datasource.password=" + POSTGRES_DB_CONTAINER.getPassword()
+			).applyTo(applicationContext.getEnvironment());
+		}
 	}
 }
 
