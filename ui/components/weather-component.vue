@@ -27,7 +27,7 @@
         </div>
         <div v-else-if="weatherForecast && Object.keys(weatherForecast).length === 0" class="mt-3">
           <div class="alert alert-info" role="alert">
-            No weather forecast data found for "{{ location }}"
+            No weather forecast data found.
           </div>
         </div>
         <div v-if="displayAlert()" class="mt-3">

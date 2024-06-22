@@ -57,7 +57,7 @@ class WeatherForecastSearchE2ETest {
 		assertThat($(By.id("location")).val()).isEqualTo(TALLINN);
 		SelenideElement alertInfo = $(className("alert"));
 		if (alertInfo.exists()) {
-			assertThat(alertInfo.text()).isEqualTo("No weather forecast data found for \"" + TALLINN + "\"");
+			assertThat(alertInfo.text()).isEqualTo("No weather forecast data found.");
 		} else {
 			fail("Could not find alert info");
 		}
