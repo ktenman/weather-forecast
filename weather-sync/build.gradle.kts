@@ -44,7 +44,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.session:spring-session-data-redis")
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocOpenApiVersion")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
     compileOnly("org.projectlombok:lombok")
@@ -57,7 +56,6 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:postgresql")
-    testImplementation("com.codeborne:selenide:$selenideVersion")
     testImplementation("org.springframework.cloud:spring-cloud-starter-contract-stub-runner")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

@@ -10,9 +10,9 @@ import ee.tenman.domain.WeatherForecast;
 import ee.tenman.domain.WeatherForecastDetails;
 import ee.tenman.domain.repository.LocationRepository;
 import ee.tenman.domain.repository.WeatherForecastRepository;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
@@ -35,16 +35,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(OutputCaptureExtension.class)
 class WeatherControllerIT {
 	
-	@Autowired
+	@Resource
 	private WeatherForecastRepository weatherForecastRepository;
 	
-	@Autowired
+	@Resource
 	private LocationRepository locationRepository;
 	
-	@Autowired
+	@Resource
 	private ObjectMapper objectMapper;
 	
-	@Autowired
+	@Resource
 	private MockMvc mockMvc;
 	
 	@MockBean
