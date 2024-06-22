@@ -29,7 +29,7 @@ Before you begin, ensure your system meets the following requirements:
     - Bootstrap v5.3
 - **Database**: PostgreSQL for data persistence and Flyway for database migration management
 - **Caching**: Redis, utilized for caching weather data
-- **Testing**: JUnit, Mockito, AssertJ, and Testcontainers for robust testing coverage
+- **Testing**: JUnit, Mockito, AssertJ, Selenide, and Testcontainers for robust testing coverage
 
 ## Architecture 🏗️
 
