@@ -37,7 +37,6 @@ jobs:
             weather-api/build/reports/tests
             weather-api/build/reports/selenide
             weather-sync/build/reports/tests
-            weather-sync/build/reports/selenide
 
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
