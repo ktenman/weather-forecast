@@ -63,8 +63,9 @@ class WeatherControllerIT {
 				.andExpect(status().isOk())
 				.andReturn().getResponse().getContentAsString();
 		
-		Map<String, List<CombinedForecastDto>> response =  objectMapper.readValue(responseJson,
-				new TypeReference<>() {});
+		Map<String, List<CombinedForecastDto>> response = objectMapper.readValue(responseJson,
+				new TypeReference<>() {
+				});
 		assertThat(response).hasSize(1).containsKey(location);
 		assertThat(response.get(location)).singleElement().satisfies(
 				forecast -> {
