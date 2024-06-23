@@ -3,13 +3,10 @@ plugins {
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
     id("jacoco")
-    id("org.sonarqube") version "5.0.0.4638"
 }
 
 group = "ee.tenman"
 version = "0.0.1-SNAPSHOT"
-val springdocOpenApiVersion = "2.5.0"
-val selenideVersion = "7.3.2"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21

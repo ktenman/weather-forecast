@@ -7,8 +7,6 @@ plugins {
 
 group = "ee.tenman"
 version = "0.0.1-SNAPSHOT"
-val springdocOpenApiVersion = "2.5.0"
-val selenideVersion = "7.3.2"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -25,13 +23,6 @@ configurations {
 
 repositories {
     mavenCentral()
-}
-
-val isE2ETestEnvironmentEnabled = System.getenv("E2E")?.toBoolean() == true
-
-val test by tasks.getting(Test::class) {
-    useJUnitPlatform()
-    finalizedBy(":jacocoTestReport")
 }
 
 val skipJacoco: Boolean = false

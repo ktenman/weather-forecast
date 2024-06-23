@@ -2,13 +2,10 @@ plugins {
     java
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
-    id("jacoco")
 }
 
 group = "ee.tenman"
 version = "0.0.1-SNAPSHOT"
-val springdocOpenApiVersion = "2.5.0"
-val selenideVersion = "7.3.2"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -29,27 +26,6 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    runtimeOnly("org.postgresql:postgresql")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-
-val test by tasks.getting(Test::class) {
-    useJUnitPlatform()
-    finalizedBy(":jacocoTestReport")
-}
-
-val skipJacoco: Boolean = false
-val jacocoEnabled: Boolean = true
-tasks.withType<JacocoReport> {
-    isEnabled = jacocoEnabled
-    if (skipJacoco) {
-        enabled = false
-    }
-    reports {
-        xml.required = true
-        html.required = true
-        csv.required = false
-    }
 }
