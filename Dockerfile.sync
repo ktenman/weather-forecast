@@ -19,7 +19,7 @@ COPY weather-sync/src /app/weather-sync/src
 # Build the sync module
 RUN gradle :weather-sync:build -x test --no-daemon
 
-FROM openjdk:21-slim
+FROM bellsoft/liberica-openjdk-alpine:21
 
 WORKDIR /app
 

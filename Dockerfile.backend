@@ -19,7 +19,7 @@ COPY weather-api/src /app/weather-api/src
 # Build the api module
 RUN gradle :weather-api:build -x test --no-daemon
 
-FROM openjdk:21-slim
+FROM bellsoft/liberica-openjdk-alpine:21
 
 WORKDIR /app
 
