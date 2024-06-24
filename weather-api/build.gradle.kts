@@ -8,7 +8,7 @@ plugins {
 group = "ee.tenman"
 version = "0.0.1-SNAPSHOT"
 val springdocOpenApiVersion = "2.5.0"
-val selenideVersion = "7.3.2"
+val selenideVersion = "7.3.3"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
