@@ -30,8 +30,8 @@
             No weather forecast data found.
           </div>
         </div>
-        <div v-if="displayAlert()" class="mt-3">
-          <div :class="['alert', alertClass()]" role="alert">
+        <div v-if="displayAlert" class="mt-3">
+          <div :class="['alert', alertClass]" role="alert">
             {{ alertMessage }}
           </div>
         </div>

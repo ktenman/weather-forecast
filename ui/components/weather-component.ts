@@ -1,40 +1,52 @@
-import {Vue} from 'vue-class-component'
-import {AlertType, getAlertBootstrapClass} from '../models/alert-type'
-import {WeatherService} from '../services/weather-service'
+import {computed, defineComponent, ref} from 'vue'
 import {ApiError} from '../models/api-error'
 import {WeatherForecastResponse} from '../models/weather-forecast'
+import {WeatherService} from '../services/weather-service'
+import {AlertType, getAlertBootstrapClass} from '../models/alert-type'
 
-export default class WeatherComponent extends Vue {
-    alertMessage: string = ''
-    alertType: AlertType | null = null
-    apiService: WeatherService = new WeatherService()
-    location: string = ''
-    weatherForecast: WeatherForecastResponse | null = null
+export default defineComponent({
+    setup() {
+        const alertMessage = ref('')
+        const alertType = ref<AlertType | null>(null)
+        const apiService = new WeatherService()
+        const location = ref('')
+        const weatherForecast = ref<WeatherForecastResponse | null>(null)
 
-    async fetchWeatherForecast() {
-        try {
-            this.weatherForecast = await this.apiService.getWeatherForecast(this.location)
-        } catch (error) {
-            this.handleApiError('Failed to load weather forecast. Please try again.', error)
+        const fetchWeatherForecast = async () => {
+            try {
+                weatherForecast.value = await apiService.getWeatherForecast(location.value)
+            } catch (error) {
+                handleApiError('Failed to load weather forecast. Please try again.', error)
+            }
+        }
+
+        const alertClass = computed(() => {
+            return getAlertBootstrapClass(alertType.value)
+        })
+
+        const displayAlert = computed(() => {
+            return alertType.value !== null && alertMessage.value !== ''
+        })
+
+        const handleApiError = (defaultMessage: string, error: any) => {
+            alertType.value = AlertType.ERROR
+            if (error instanceof ApiError) {
+                alertMessage.value = `${error.message}. ${error.debugMessage}: ${Object.entries(error.validationErrors)
+                    .map(([, message]) => message)
+                    .join(', ')}`
+            } else {
+                alertMessage.value = defaultMessage
+            }
+        }
+
+        return {
+            alertMessage,
+            alertType,
+            location,
+            weatherForecast,
+            fetchWeatherForecast,
+            alertClass,
+            displayAlert
         }
     }
-
-    alertClass(): string {
-        return getAlertBootstrapClass(this.alertType)
-    }
-
-    displayAlert(): boolean {
-        return this.alertType !== null && this.alertMessage !== ''
-    }
-
-    private handleApiError(defaultMessage: string, error: any) {
-        this.alertType = AlertType.ERROR
-        if (error instanceof ApiError) {
-            this.alertMessage = `${error.message}. ${error.debugMessage}: ${Object.entries(error.validationErrors)
-                .map(([, message]) => message).join(', ')}`
-        } else {
-            this.alertMessage = defaultMessage
-        }
-    }
-
-}
+})
