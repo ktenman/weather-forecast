@@ -8,13 +8,13 @@ export default defineComponent({
     setup() {
         const alertMessage = ref('')
         const alertType = ref<AlertType | null>(null)
-        const apiService = new WeatherService()
+        const weatherService = new WeatherService()
         const location = ref('')
         const weatherForecast = ref<WeatherForecastResponse | null>(null)
 
         const fetchWeatherForecast = async () => {
             try {
-                weatherForecast.value = await apiService.getWeatherForecast(location.value)
+                weatherForecast.value = await weatherService.getWeatherForecast(location.value)
             } catch (error) {
                 handleApiError('Failed to load weather forecast. Please try again.', error)
             }
