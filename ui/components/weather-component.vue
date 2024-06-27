@@ -5,7 +5,8 @@
         <h3>Weather Forecast</h3>
         <form @submit.prevent="fetchWeatherForecast">
           <div class="input-group mb-3">
-            <input v-model="location" class="form-control" placeholder="Search for location..." type="text"/>
+            <input id="location" v-model="location" class="form-control" placeholder="Search for location..."
+                   type="text"/>
             <button class="btn btn-primary" type="submit">Search</button>
           </div>
         </form>
