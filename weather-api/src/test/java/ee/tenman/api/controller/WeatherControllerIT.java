@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ee.tenman.api.models.CombinedForecastDto;
 import ee.tenman.common.domain.ForecastType;
 import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.ProviderName;
 import ee.tenman.common.domain.WeatherForecast;
 import ee.tenman.common.domain.WeatherForecastDetails;
 import ee.tenman.common.integrationtest.IntegrationTest;
@@ -82,6 +83,7 @@ class WeatherControllerIT {
 	
 	private void insertWeatherForecastToDB() {
 		WeatherForecast weatherForecast = new WeatherForecast();
+		weatherForecast.setProviderName(ProviderName.ILMATEENISTUS);
 		weatherForecast.setDate(LocalDate.parse("2024-06-16"));
 		Location location = new Location();
 		location.setName("Tartu");

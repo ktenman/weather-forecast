@@ -2,6 +2,7 @@ package ee.tenman.sync.job;
 
 import ee.tenman.common.domain.ForecastType;
 import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.ProviderName;
 import ee.tenman.common.domain.WeatherForecast;
 import ee.tenman.common.integrationtest.IntegrationTest;
 import ee.tenman.common.repository.WeatherForecastRepository;
@@ -41,6 +42,7 @@ class WeatherForecastRetrievalJobIT {
 		List<WeatherForecast> allForecasts = weatherForecastRepository.findAll();
 		assertThat(allForecasts).isNotEmpty().hasSize(6).first().satisfies(weatherForecast -> {
 			assertThat(weatherForecast.getLocation().getName()).isEqualTo("Jõhvi");
+			assertThat(weatherForecast.getProviderName()).isEqualTo(ProviderName.ILMATEENISTUS);
 			assertThat(weatherForecast.getDate()).isEqualTo("2024-06-16");
 			assertThat(weatherForecast.getWeatherForecastDetails()).hasSize(2)
 					.anySatisfy(details -> {

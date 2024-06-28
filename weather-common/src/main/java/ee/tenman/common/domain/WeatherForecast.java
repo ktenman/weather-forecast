@@ -2,6 +2,8 @@ package ee.tenman.common.domain;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -25,6 +27,9 @@ public class WeatherForecast extends BaseEntity {
 	@ManyToOne
 	@JoinColumn(name = "location_id")
 	private Location location;
+	
+	@Enumerated(EnumType.STRING)
+	private ProviderName providerName;
 	
 	@OneToMany(mappedBy = "weatherForecast", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private Set<WeatherForecastDetails> weatherForecastDetails = new HashSet<>();

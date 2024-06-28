@@ -2,6 +2,7 @@ package ee.tenman.sync.service;
 
 import ee.tenman.common.domain.ForecastType;
 import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.ProviderName;
 import ee.tenman.common.domain.WeatherForecast;
 import ee.tenman.common.domain.WeatherForecastDetails;
 import ee.tenman.common.repository.WeatherForecastRepository;
@@ -18,6 +19,7 @@ import java.util.stream.Stream;
 
 import static ee.tenman.common.domain.ForecastType.DAY;
 import static ee.tenman.common.domain.ForecastType.NIGHT;
+import static ee.tenman.common.domain.ProviderName.ILMATEENISTUS;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
@@ -40,6 +42,11 @@ public class IlmateenistusWeatherService implements WeatherService {
 	@Override
 	public void saveAll(List<WeatherForecast> weatherForecasts) {
 		weatherForecastRepository.saveAllAndFlush(weatherForecasts);
+	}
+	
+	@Override
+	public ProviderName getProviderName() {
+		return ILMATEENISTUS;
 	}
 	
 	private Stream<WeatherForecast> processForecast(ForecastDto forecastDto) {
@@ -70,6 +77,7 @@ public class IlmateenistusWeatherService implements WeatherService {
 		
 		forecast.setDate(date);
 		forecast.setLocation(location);
+		forecast.setProviderName(getProviderName());
 		
 		entry.getValue().forEach(place -> {
 			WeatherForecastDetails detail = new WeatherForecastDetails();
