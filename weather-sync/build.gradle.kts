@@ -27,6 +27,9 @@ repositories {
 
 extra["springCloudVersion"] = "2023.0.2"
 
+val springRetryVersion = "2.0.3"
+val springAspectsVersion = "6.1.5"
+
 dependencies {
     implementation(project(":weather-common"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -35,6 +38,8 @@ dependencies {
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
+    implementation("org.springframework.retry:spring-retry:$springRetryVersion")
+    implementation("org.springframework:spring-aspects:$springAspectsVersion")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("org.postgresql:postgresql")
