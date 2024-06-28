@@ -6,8 +6,9 @@ import ee.tenman.common.domain.WeatherForecast;
 import ee.tenman.common.domain.WeatherForecastDetails;
 import ee.tenman.common.repository.WeatherForecastRepository;
 import ee.tenman.sync.external.WeatherForecastDto;
-import ee.tenman.sync.external.WeatherServiceClient;
+import ee.tenman.sync.external.WeatherForecastDto.PlaceDto;
 import ee.tenman.sync.service.LocationService;
+import ee.tenman.sync.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -28,14 +29,14 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 public class WeatherForecastRetrievalJob {
 	
-	private final WeatherServiceClient weatherServiceClient;
+	private final WeatherService weatherService;
 	private final WeatherForecastRepository weatherForecastRepository;
 	private final LocationService locationService;
 	
 	@Scheduled(cron = "0 0/30 * * * *")
 	public void runJob() {
 		log.info("Retrieving weather forecasts");
-		WeatherForecastDto weatherForecastDto = weatherServiceClient.getWeatherForecast();
+		WeatherForecastDto weatherForecastDto = weatherService.getWeatherForecast();
 		List<WeatherForecast> weatherForecasts = weatherForecastDto.getForecasts().stream()
 				.flatMap(this::processForecast)
 				.toList();
@@ -84,8 +85,10 @@ public class WeatherForecastRetrievalJob {
 		return forecast;
 	}
 	
-	private record LocationWithForecast(WeatherForecastDto.PlaceDto place,
-	                                    ForecastType forecastType) {
+	private record LocationWithForecast(
+			PlaceDto place,
+			ForecastType forecastType
+	) {
 		String location() {
 			return place.getLocation();
 		}
