@@ -105,10 +105,9 @@ You can access Swagger documentation in your web browser at http://localhost:808
 
 ### Frontend Setup
 
-Navigate to the `ui` directory, install frontend dependencies, and start the development server:
+Install frontend dependencies, and start the development server:
 
 ```
-cd ui
 npm install
 npm run dev
 ```
