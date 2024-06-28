@@ -1,4 +1,4 @@
-package ee.tenman.sync.external;
+package ee.tenman.sync.external.ilmateenistus;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;

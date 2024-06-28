@@ -1,4 +1,4 @@
-package ee.tenman.sync.external;
+package ee.tenman.sync.external.ilmateenistus;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

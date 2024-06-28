@@ -1,7 +1,11 @@
 package ee.tenman.sync.service;
 
-import ee.tenman.sync.external.WeatherForecastDto;
+import ee.tenman.common.domain.WeatherForecast;
+
+import java.util.List;
 
 public interface WeatherService {
-	WeatherForecastDto getWeatherForecast();
+	List<WeatherForecast> getWeatherForecasts();
+	
+	void saveAll(List<WeatherForecast> weatherForecasts);
 }
