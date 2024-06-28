@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 
 @FeignClient(name = "ilmateenistus-api", url = "${ilmateenistus.url}")
-public interface IlmateenistusApiClient {
+public interface IlmateenistusApi {
 	@GetMapping(value = "/ilma_andmed/xml/forecast.php?lang=eng", consumes = APPLICATION_XML_VALUE)
 	@Retryable(maxAttempts = 5, backoff = @Backoff(delay = 1000))
 	WeatherForecastDto getWeatherForecast();

@@ -1,4 +1,4 @@
-package ee.tenman.sync.service;
+package ee.tenman.sync.external.ilmateenistus;
 
 import ee.tenman.common.domain.ForecastType;
 import ee.tenman.common.domain.Location;
@@ -6,9 +6,9 @@ import ee.tenman.common.domain.ProviderName;
 import ee.tenman.common.domain.WeatherForecast;
 import ee.tenman.common.domain.WeatherForecastDetails;
 import ee.tenman.common.repository.WeatherForecastRepository;
-import ee.tenman.sync.external.ilmateenistus.WeatherForecastDto;
 import ee.tenman.sync.external.ilmateenistus.WeatherForecastDto.ForecastDto;
-import ee.tenman.sync.external.ilmateenistus.WeatherServiceClient;
+import ee.tenman.sync.service.LocationService;
+import ee.tenman.sync.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +28,12 @@ import static java.util.stream.Collectors.toList;
 public class IlmateenistusWeatherService implements WeatherService {
 	
 	private final WeatherForecastRepository weatherForecastRepository;
-	private final WeatherServiceClient weatherServiceClient;
+	private final IlmateenistusApi ilmateenistusApi;
 	private final LocationService locationService;
 	
 	@Override
 	public List<WeatherForecast> getWeatherForecasts() {
-		WeatherForecastDto weatherForecastDto = weatherServiceClient.getWeatherForecast();
+		WeatherForecastDto weatherForecastDto = ilmateenistusApi.getWeatherForecast();
 		return weatherForecastDto.getForecasts().stream()
 				.flatMap(this::processForecast)
 				.toList();
