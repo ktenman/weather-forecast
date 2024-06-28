@@ -1,4 +1,8 @@
 spring:
+  docker:
+    compose:
+      enabled: true
+      file: ./compose.yml
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/weather}
     username: ${SPRING_DATASOURCE_USERNAME:weather}
