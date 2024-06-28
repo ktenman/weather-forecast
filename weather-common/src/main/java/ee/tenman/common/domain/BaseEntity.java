@@ -1,4 +1,4 @@
-package ee.tenman.domain;
+package ee.tenman.common.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

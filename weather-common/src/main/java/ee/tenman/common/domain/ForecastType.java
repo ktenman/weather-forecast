@@ -1,4 +1,4 @@
-package ee.tenman.domain;
+package ee.tenman.common.domain;
 
 public enum ForecastType {
 	DAY,

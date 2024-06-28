@@ -6,11 +6,11 @@ WORKDIR /app
 COPY build.gradle.kts settings.gradle.kts /app/
 
 # Copy the domain module build files and source code
-COPY weather-domain/build.gradle.kts /app/weather-domain/
-COPY weather-domain/src /app/weather-domain/src
+COPY weather-common/build.gradle.kts /app/weather-common/
+COPY weather-common/src /app/weather-common/src
 
 # Build the domain module, excluding the bootJar task
-RUN gradle :weather-domain:build -x test -x bootJar --no-daemon
+RUN gradle :weather-common:build -x test -x bootJar --no-daemon
 
 # Copy the sync module build files and source code
 COPY weather-sync/build.gradle.kts /app/weather-sync/

@@ -30,7 +30,7 @@ repositories {
 extra["springCloudVersion"] = "2023.0.2"
 
 dependencies {
-    implementation(project(":weather-domain"))
+    implementation(project(":weather-common"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")

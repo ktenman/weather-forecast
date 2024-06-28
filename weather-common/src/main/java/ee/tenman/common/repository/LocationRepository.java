@@ -1,6 +1,6 @@
-package ee.tenman.domain.repository;
+package ee.tenman.common.repository;
 
-import ee.tenman.domain.Location;
+import ee.tenman.common.domain.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

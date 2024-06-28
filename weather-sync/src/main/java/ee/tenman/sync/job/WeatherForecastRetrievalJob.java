@@ -1,10 +1,10 @@
 package ee.tenman.sync.job;
 
-import ee.tenman.domain.ForecastType;
-import ee.tenman.domain.Location;
-import ee.tenman.domain.WeatherForecast;
-import ee.tenman.domain.WeatherForecastDetails;
-import ee.tenman.domain.repository.WeatherForecastRepository;
+import ee.tenman.common.domain.ForecastType;
+import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.WeatherForecast;
+import ee.tenman.common.domain.WeatherForecastDetails;
+import ee.tenman.common.repository.WeatherForecastRepository;
 import ee.tenman.sync.external.WeatherForecastDto;
 import ee.tenman.sync.external.WeatherServiceClient;
 import ee.tenman.sync.service.LocationService;
@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static ee.tenman.domain.ForecastType.DAY;
-import static ee.tenman.domain.ForecastType.NIGHT;
+import static ee.tenman.common.domain.ForecastType.DAY;
+import static ee.tenman.common.domain.ForecastType.NIGHT;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 

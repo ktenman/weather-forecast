@@ -1,4 +1,4 @@
-package ee.tenman.domain;
+package ee.tenman.common.domain;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

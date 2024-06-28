@@ -1,6 +1,6 @@
 package ee.tenman.api;
 
-import ee.tenman.domain.Constants;
+import ee.tenman.common.Constants;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

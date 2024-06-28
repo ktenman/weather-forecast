@@ -1,7 +1,7 @@
 package ee.tenman.api.service;
 
-import ee.tenman.domain.WeatherForecast;
-import ee.tenman.domain.repository.WeatherForecastRepository;
+import ee.tenman.common.domain.WeatherForecast;
+import ee.tenman.common.repository.WeatherForecastRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

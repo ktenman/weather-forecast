@@ -1,7 +1,7 @@
 package ee.tenman.api.mapper;
 
 import ee.tenman.api.models.CombinedForecastDto;
-import ee.tenman.domain.WeatherForecast;
+import ee.tenman.common.domain.WeatherForecast;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

@@ -4,7 +4,7 @@ import ee.tenman.api.configuration.logging.aspect.Loggable;
 import ee.tenman.api.mapper.WeatherMapper;
 import ee.tenman.api.models.CombinedForecastDto;
 import ee.tenman.api.service.WeatherService;
-import ee.tenman.domain.WeatherForecast;
+import ee.tenman.common.domain.WeatherForecast;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

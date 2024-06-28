@@ -1,7 +1,7 @@
-package ee.tenman.domain.repository;
+package ee.tenman.common.repository;
 
-import ee.tenman.domain.Location;
-import ee.tenman.domain.WeatherForecast;
+import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.WeatherForecast;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

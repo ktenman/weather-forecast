@@ -1,10 +1,10 @@
 package ee.tenman.api.mapper;
 
 import ee.tenman.api.models.CombinedForecastDto;
-import ee.tenman.domain.ForecastType;
-import ee.tenman.domain.Location;
-import ee.tenman.domain.WeatherForecast;
-import ee.tenman.domain.WeatherForecastDetails;
+import ee.tenman.common.domain.ForecastType;
+import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.WeatherForecast;
+import ee.tenman.common.domain.WeatherForecastDetails;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

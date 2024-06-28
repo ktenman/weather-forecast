@@ -1,10 +1,10 @@
 package ee.tenman.sync.job;
 
-import ee.tenman.domain.ForecastType;
-import ee.tenman.domain.Location;
-import ee.tenman.domain.WeatherForecast;
-import ee.tenman.domain.integrationtest.IntegrationTest;
-import ee.tenman.domain.repository.WeatherForecastRepository;
+import ee.tenman.common.domain.ForecastType;
+import ee.tenman.common.domain.Location;
+import ee.tenman.common.domain.WeatherForecast;
+import ee.tenman.common.integrationtest.IntegrationTest;
+import ee.tenman.common.repository.WeatherForecastRepository;
 import jakarta.annotation.Resource;
 import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.Test;

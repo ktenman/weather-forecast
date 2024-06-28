@@ -1,7 +1,7 @@
 package ee.tenman.sync.service;
 
-import ee.tenman.domain.Location;
-import ee.tenman.domain.repository.LocationRepository;
+import ee.tenman.common.domain.Location;
+import ee.tenman.common.repository.LocationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
