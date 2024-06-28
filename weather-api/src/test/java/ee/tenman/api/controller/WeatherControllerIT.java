@@ -2,12 +2,12 @@ package ee.tenman.api.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ee.tenman.api.IntegrationTest;
 import ee.tenman.api.models.CombinedForecastDto;
 import ee.tenman.domain.ForecastType;
 import ee.tenman.domain.Location;
 import ee.tenman.domain.WeatherForecast;
 import ee.tenman.domain.WeatherForecastDetails;
+import ee.tenman.domain.integrationtest.IntegrationTest;
 import ee.tenman.domain.repository.LocationRepository;
 import ee.tenman.domain.repository.WeatherForecastRepository;
 import jakarta.annotation.Resource;

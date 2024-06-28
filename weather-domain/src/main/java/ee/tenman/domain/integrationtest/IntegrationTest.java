@@ -1,4 +1,4 @@
-package ee.tenman.sync;
+package ee.tenman.domain.integrationtest;
 
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

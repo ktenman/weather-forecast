@@ -28,4 +28,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+    implementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-testcontainers")
+    implementation("org.testcontainers:junit-jupiter")
+    implementation("org.testcontainers:postgresql")
 }
