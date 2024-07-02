@@ -27,7 +27,7 @@ repositories {
 
 extra["springCloudVersion"] = "2023.0.2"
 
-val springRetryVersion = "2.0.3"
+val springRetryVersion = "2.0.6"
 val springAspectsVersion = "6.1.5"
 
 dependencies {
