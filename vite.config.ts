@@ -1,29 +1,21 @@
-import {defineConfig} from 'vite'
-import vue from '@vitejs/plugin-vue'
-import {resolve} from 'path'
+import {defineConfig} from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [vue()],
     root: 'ui',
-    base: '/',
+    plugins: [vue()],
     server: {
-        port: 61234, // Using a non-standard port for development
+        port: 61234,
         proxy: {
             '/api': {
-                target: 'http://localhost:8081', // Proxy API requests to backend server
+                target: 'http://localhost:8081',
                 changeOrigin: true,
             },
         },
     },
+
     build: {
-        outDir: resolve(__dirname, '../dist'),
+        outDir: '../dist', // This will output the build artifacts to /app/dist when the root is /app/ui
         sourcemap: true,
-        emptyOutDir: true,
     },
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, './ui/src'),
-        },
-    },
-})
+});
