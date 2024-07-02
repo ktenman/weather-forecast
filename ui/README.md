@@ -1,27 +1,104 @@
-# Vue 3 + TypeScript + Vite
+# Weather Forecast UI
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue
-3 `<script setup>` SFCs, check out
-the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project is a weather forecast user interface built with Vue 3, TypeScript, and Vite. It provides a simple and intuitive way for users to view weather forecasts for various locations in Estonia.
+
+## Technologies Used
+
+- Vue 3
+- TypeScript
+- Vite
+- Bootstrap 5
+- Axios
+
+## Features
+
+- Search for weather forecasts by location
+- Display temperature ranges for different dates
+- Show alerts for errors or no data scenarios
+
+## Project Setup
+
+### Prerequisites
+
+- Node.js (v20.11.1 or later)
+- npm (v10.2.4 or later)
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/your-username/weather-forecast-ui.git
+   cd weather-forecast-ui
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+### Development
+
+To start the development server:
+
+```
+npm run dev
+```
+
+This will start the Vite dev server. Open your browser and navigate to `http://localhost:61234` to see the application.
+
+### Building for Production
+
+To build the application for production:
+
+```
+npm run build
+```
+
+This will generate a production-ready build in the `dist` directory.
+
+### Linting
+
+To lint your code:
+
+```
+npm run lint
+```
+
+### Formatting
+
+To format your code using Prettier:
+
+```
+npm run format
+```
 
 ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (
-  and disable
-  Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+We recommend using Visual Studio Code with the following extensions:
 
-## Type Support For `.vue` Imports in TS
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for
-type checking. In editors, we
-need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-to make the TypeScript language service aware of `.vue` types.
+## Type Support for `.vue` Imports in TS
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented
-a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more
-performant. You can enable it by the following steps:
+TypeScript cannot handle type information for `.vue` imports by default, so we use `vue-tsc` for type checking. You may need the [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) in your editor for the best development experience.
 
-1. Disable the built-in TypeScript Extension
-    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Project Structure
+
+```
+/ui
+  /components
+    weather-component.vue
+  /models
+    alert-type.ts
+    api-error.ts
+    weather-forecast.ts
+    weather-forecast-response.ts
+  /services
+    weather-service.ts
+  app.vue
+  index.html
+  main.ts
+  style.css
+```

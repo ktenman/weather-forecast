@@ -1,6 +1,6 @@
 export interface WeatherForecast {
-    date: string;
-    location: string;
-    temperatureMin: number;
-    temperatureMax: number;
+  date: string
+  location: string
+  temperatureMin: number
+  temperatureMax: number
 }

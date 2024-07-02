@@ -5,12 +5,28 @@ on:
   pull_request:
 
 jobs:
+  lint-and-format:
+    name: 🧹 Lint and Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.7
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
+      - name: Check Prettier formatting
+        run: npm run format:check
+
   test:
     name: 🧪 Test with Gradle
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        test-type: [ 'unit', 'e2e' ]
+        test-type: ['unit', 'e2e']
     steps:
       - uses: actions/checkout@v4.1.7
         with:
@@ -22,7 +38,7 @@ jobs:
           distribution: 'temurin'
       - name: Build with Docker Compose (for E2E tests)
         if: matrix.test-type == 'e2e'
-        run: docker-compose -f docker-compose.yml build --no-cache
+        run: docker-compose -f docker-compose.yml build
       - name: Start services with Docker Compose (for E2E tests)
         if: matrix.test-type == 'e2e'
         run: docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up -d
@@ -43,7 +59,7 @@ jobs:
 
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
-    needs: [ test ]
+    needs: [test]
     if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:

@@ -24,9 +24,9 @@ Before you begin, ensure your system meets the following requirements:
 
 - **Backend**: Spring Boot v3.3
 - **Frontend**:
-    - **Build Tool**: Vite
-    - Vue.js v3.4
-    - Bootstrap v5.3
+  - **Build Tool**: Vite
+  - Vue.js v3.4
+  - Bootstrap v5.3
 - **Database**: PostgreSQL for data persistence and Flyway for database migration management
 - **Caching**: Redis, utilized for caching weather data
 - **Testing**: JUnit, Mockito, AssertJ, Selenide, and Testcontainers for robust testing coverage
@@ -96,7 +96,7 @@ docker-compose -f compose.yml up -d
 Navigate to the root directory and compile the Java application using Gradle:
 
 ```
-cd weather-api 
+cd weather-api
 ../gradlew clean build
 ../gradlew bootRun
 ```
@@ -130,44 +130,45 @@ To update the application or its services after making changes:
 
 1. Rebuild the services:
 
-  ```
-  docker-compose -f docker-compose.yml build
-  ```
+```
+docker-compose -f docker-compose.yml build
+```
 
 2. Restart the services for the changes to take effect:
 
-  ```
-  docker-compose -f docker-compose.yml up -d
-  ```
+```
+docker-compose -f docker-compose.yml up -d
+```
 
 ### End-to-End Tests on Unix System
 
 1. Start Docker Containers:
 
-  ```
-  docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up -d
-  ```
+```
+docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up -d
+```
 
 2. Run E2E Tests:
 
-  ```
-  cd weather-api 
-  export E2E=true
-  ../gradlew test --info -Pheadless=true
-  ```
+```
+cd weather-api
+export E2E=true
+../gradlew test --info -Pheadless=true
+```
 
 ### Continuous Integration and Deployment
 
-* A CI pipeline via GitHub Actions in the `.github` folder automates unit and integration tests.
-* Dependabot keeps Maven and GitHub Actions versions up-to-date, automating dependency management.
+- A CI pipeline via GitHub Actions in the `.github` folder automates unit and integration tests.
+- Dependabot keeps Maven and GitHub Actions versions up-to-date, automating dependency management.
 
 ### Key Features
 
-* Weather Forecast Retrieval: Retrieves weather forecast data from the Ilmateenistus API.
-* Data Persistence: Stores weather forecast data in a PostgreSQL database.
-* Caching: Caches weather forecast data using Redis for improved performance.
-* User Interface: Provides a user-friendly interface for viewing weather forecasts for various locations in Estonia.
+- Weather Forecast Retrieval: Retrieves weather forecast data from the Ilmateenistus API.
+- Data Persistence: Stores weather forecast data in a PostgreSQL database.
+- Caching: Caches weather forecast data using Redis for improved performance.
+- User Interface: Provides a user-friendly interface for viewing weather forecasts for various locations in Estonia.
 
 ---
+
 This README aims to guide developers through setting up, running, and understanding the core functionalities and
 technical aspects of the Weather Forecast application.
