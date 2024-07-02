@@ -8,7 +8,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint ui --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write \"**/*.{js,ts,vue,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
     "axios": "^1.7.2",
