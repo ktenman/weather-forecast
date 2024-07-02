@@ -1,14 +1,16 @@
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
-CREATE TABLE location(
-    id BIGSERIAL PRIMARY KEY,
-    name VARCHAR(255)                                       NOT NULL
+CREATE TABLE location
+(
+    id   BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
         UNIQUE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-CREATE TABLE weather_forecast(
+CREATE TABLE weather_forecast
+(
     id            BIGSERIAL PRIMARY KEY,
     date          DATE                                               NOT NULL,
     created_at    TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -19,7 +21,8 @@ CREATE TABLE weather_forecast(
     UNIQUE (date, location_id)
 );
 
-CREATE TABLE weather_forecast_details(
+CREATE TABLE weather_forecast_details
+(
     id              BIGSERIAL PRIMARY KEY,
     forecast_id     BIGINT                                             NOT NULL
         REFERENCES weather_forecast,
