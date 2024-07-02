@@ -1,4 +1,4 @@
-FROM node:21-slim as build
+FROM node:lts-slim as build
 
 WORKDIR /app
 # Copying files separately can help in utilizing Docker's cache mechanism efficiently.
