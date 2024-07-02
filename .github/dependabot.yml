@@ -16,5 +16,5 @@ updates:
       interval: weekly
     ignore:
       - dependency-name: 'typescript'
-        versions: [ '~5.3.3' ]
+        versions: ['~5.3.3']
     open-pull-requests-limit: 10

@@ -8,9 +8,8 @@ export class ApiError {
     public status: number | string,
     public message: string,
     public debugMessage: string,
-    public validationErrors: ValidationErrors = {},
-  ) {
-  }
+    public validationErrors: ValidationErrors = {}
+  ) {}
 }
 
 /* eslint-enable no-unused-vars */
