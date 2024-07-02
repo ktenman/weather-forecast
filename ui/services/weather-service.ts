@@ -1,28 +1,28 @@
-import axios, { AxiosError } from 'axios'
-import { ApiError } from '../models/api-error'
-import { WeatherForecastResponse } from '../models/weather-forecast'
+import {WeatherForecastResponse} from '../models/weather-forecast'
+import {ApiError} from '../models/api-error'
 
 export class WeatherService {
-  async getWeatherForecast(location: string): Promise<WeatherForecastResponse> {
-    try {
-      const { data } = await axios.get<WeatherForecastResponse>('/api/weather/forecast', {
-        params: { location },
-      })
-      return data
-    } catch (error) {
-      this.handleError(error as AxiosError<ApiError>)
-    }
-  }
+  private readonly baseUrl = '/api/weather/forecast'
 
-  private handleError(error: AxiosError<ApiError>): never {
-    if (axios.isAxiosError(error) && error.response) {
+  async getWeatherForecast(location: string): Promise<WeatherForecastResponse> {
+    const url = `${this.baseUrl}?location=${encodeURIComponent(location)}`
+
+    const response = await fetch(url)
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}))
       throw new ApiError(
-        error.response.status,
-        error.response.data.message ?? 'Unknown error',
-        error.response.data.debugMessage ?? 'An unknown error occurred. Is backend running?',
-        error.response.data.validationErrors ?? {}
+        response.status,
+        errorData?.message ?? 'Failed to fetch weather forecast',
+        errorData?.debugMessage ?? `HTTP error! status: ${response.status}`,
+        errorData?.validationErrors ?? {}
       )
     }
-    throw error
+
+    try {
+      return await response.json()
+    } catch (error) {
+      throw new Error('Failed to parse weather forecast data')
+    }
   }
 }
