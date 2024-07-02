@@ -1,4 +1,4 @@
-FROM node:21-slim as build
+FROM node:lts-slim as build
 
 WORKDIR /app
 # Copying files separately can help in utilizing Docker's cache mechanism efficiently.
@@ -13,7 +13,7 @@ COPY tsconfig.node.json ./
 COPY vite.config.ts ./
 COPY vite-env.d.ts ./
 
-RUN npm run build && ls -la /app
+RUN npm run build && find /app -name "index.html"
 
 # Verify that the dist directory exists and contains the expected files.
 # This is just for debugging purposes. You can remove this line once everything works fine.
