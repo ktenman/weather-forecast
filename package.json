@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint ui --fix"
+    "lint": "eslint ui --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "axios": "^1.7.2",
@@ -18,7 +19,10 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@vitejs/plugin-vue": "^5.0.5",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.26.0",
+    "prettier": "^3.0.0",
     "typescript": "5.5.2",
     "vite": "^5.3.2",
     "vue-tsc": "^2.0.24"
