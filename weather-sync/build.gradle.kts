@@ -28,7 +28,7 @@ repositories {
 extra["springCloudVersion"] = "2023.0.2"
 
 val springRetryVersion = "2.0.6"
-val springAspectsVersion = "6.1.10"
+val springAspectsVersion = "6.1.11"
 
 dependencies {
     implementation(project(":weather-common"))
